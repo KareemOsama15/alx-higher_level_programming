@@ -10,14 +10,15 @@
  */
 listint_t *insert_node(listint_t **head, int number)
 {
-	listint_t *newElement = NULL, *current = *head;
+	listint_t *newElement;
+	listint_t *current = *head;
 
 	newElement = (struct listint_s *)malloc(sizeof(struct listint_s));
 	if (!newElement)
 		return (NULL);
 
 	newElement->n = number;
-	if (*head == NULL || current->data >= newElement->data)
+	if (*head == NULL || current->n >= newElement->n)
 	{
 		newElement->next = *head;
 		*head = newElement;
