@@ -4,6 +4,6 @@ def islower(c):
     c = ord(c)
     for cAscii in range(97, 123):
         if c == cAscii:
-            return(True)
+            return (True)
     if c != cAscii:
-        return(False)
+        return (False)
