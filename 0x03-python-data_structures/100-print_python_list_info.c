@@ -13,6 +13,7 @@ void print_python_list_info(PyObject *p)
 {
 	size_t i = 0, length;
 	PyObject *item;
+	PyListObject *list;
 
 	if (!p)
 	{
@@ -23,6 +24,8 @@ void print_python_list_info(PyObject *p)
 	{
 		length = PyList_Size(p);
 		printf("[*] Size of the Python List = %lu\n", length);
+
+		list = (PyListObject *)p;
 		printf("[*] Allocated = %lu\n", p->allocated);
 
 		while (i < length)
