@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 def best_score(a_dictionary):
-   
-    if a_dictionary is not None:
 
+    if not a_dictionary:
+        return (None)
+    else:
         for item, value in a_dictionary.items():
             name = item
             data = value
@@ -13,5 +14,3 @@ def best_score(a_dictionary):
                 data = valueDict
                 name = keyDict
         return (name)
-    else:
-        return (None)
