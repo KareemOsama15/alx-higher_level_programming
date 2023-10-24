@@ -15,19 +15,20 @@ class Square:
 
 
     def __str__(self):
+        """Method that prints a square object
+        """
         val = ''
         if self.size == 0:
+            return (val)
+        for i in range(self.position[1]):
             val += '\n'
-        else:
-            for i in range(self.position[1]):
+        for i in range(self.size):
+            for k in range(self.position[0]):
+                val += ' '
+            for j in range(self.size):
+                val += '#'
+            if i is not (self.size - 1):
                 val += '\n'
-            for i in range(self.size):
-                for k in range(self.position[0]):
-                    val += ' '
-                for j in range(self.size):
-                    val += '#'
-                if i is not (self.size - 1):
-                    val += '\n'
         return (val)
 
 
