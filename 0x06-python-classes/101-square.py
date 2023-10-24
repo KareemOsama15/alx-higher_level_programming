@@ -13,7 +13,6 @@ class Square:
         self.size = size
         self.position = position
 
-
     def __str__(self):
         """Method that prints a square object
         """
@@ -31,13 +30,11 @@ class Square:
                 val += '\n'
         return (val)
 
-
     @property
     def size(self):
         """Method that returns the object size value
         """
         return (self.__size)
-
 
     @size.setter
     def size(self, value):
@@ -49,13 +46,11 @@ class Square:
             raise ValueError("size must be >= 0")
         self.__size = value
 
-
     @property
     def position(self):
         """Method that returns the object position value
         """
         return (self.__position)
-
 
     @position.setter
     def position(self, value):
@@ -71,12 +66,10 @@ class Square:
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
-
     def area(self):
         """Method that returns the area of a square object
         """
         return (self.__size ** 2)
-
 
     def my_print(self):
         """Method that prints "#" and ' ' of a square object
