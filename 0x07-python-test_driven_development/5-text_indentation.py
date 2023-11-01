@@ -1,52 +1,36 @@
 #!/usr/bin/python3
+"""
+This module is for that prints a text with 2 new lines
+after each of these characters: ., ? and :
+"""
+
 
 def text_indentation(text):
-    
-    # if not isinstance(text, str):
-    #     raise TypeError("text must be a string")
-    
-    # # for delim in '.?:':
-    # #     newText = text.split(delim)
-    # #     for i in newText:
-    # #         i = i.strip(" ")
-    # #         text = i + delim + "\n\n"
-    # # print(text)
+    """
+    Function that prints a text with 2 new lines
+    after each of these characters: ., ? and :.
 
-    for delim in ".:?":
-        newtext = text.split(delim)
-        text = ""
-        for line in newtext:
-            line = line.strip()
-            text += line + '\n'
-        print(text)
-        print('=' * 20)
-        print(newtext)
+    Args:
+        text: the text arguement
 
-    # # print(newtext)
+    Returns:
+        no return
 
-######################################
+    Raises:
+        TypeError: if text isn't string
 
+    """
 
-    # if type(text) is not str:
-    #     raise TypeError("text must be a string")
+    if type(text) is not str:
+        raise TypeError("text must be a string")
 
-    # s = text[:]
+    cpText = text[:]
 
-    # for d in ".?:":
-    #     list_text = s.split(d)
-    #     s = ""
-    #     for i in list_text:
-    #         i = i.strip(" ")
-    #         s = i + d if s is "" else s + "\n\n" + i + d
+    for delim in ".?:":
+        list_text = cpText.split(delim)
+        cpText = ""
+        for i in list_text:
+            i = i.strip(" ")
+            cpText = i + delim if cpText == "" else cpText + "\n\n" + i + delim
 
-    # print(s[:-3], end="")
-
-text_indentation("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
-Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? \
-Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud: \
-Plus semper voluptatis? Teneo, inquit, finem illi videri nihil dolere. \
-Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum \
-rationi oboediens. Si id dicis, vicimus. Inde sermone vario sex illa a Dipylo \
-stadia confecimus. Sin aliud quid voles, postea. Quae animi affectio suum \
-cuique tribuens atque hanc, quam dico. Utinam quidem dicerent alium alio \
-beatiorem! Iam ruinas videres""")
+    print(cpText[:-3], end="")
