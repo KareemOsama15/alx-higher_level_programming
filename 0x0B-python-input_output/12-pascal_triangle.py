@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""This module is for pascal_triangle function"""
+
+
 def pascal_triangle(n):
     """ Function that returns the pascal triangle
 
