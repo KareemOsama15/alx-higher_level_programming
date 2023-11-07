@@ -1,8 +1,6 @@
 #!/usr/bin/python3
 
-"""
-this module is for class
-"""
+"""This module is for class MyList"""
 
 
 class MyList(list):
@@ -14,6 +12,7 @@ class MyList(list):
         """
         method that prints the list, but sorted (ascending sort)
         """
+
         sortedList = self.copy()
         sortedList.sort()
         print(sortedList)
