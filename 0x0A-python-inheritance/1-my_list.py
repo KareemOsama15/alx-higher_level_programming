@@ -12,7 +12,7 @@ class MyList(list):
 
     def print_sorted(self):
         """
-        method  that prints the list, but sorted (ascending sort)
+        method that prints the list, but sorted (ascending sort)
         """
         sortedList = self.copy()
         sortedList.sort()
