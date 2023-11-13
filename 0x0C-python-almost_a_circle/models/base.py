@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """This module for class Base"""
 import json
+import os.path
 
 
 class Base:
@@ -19,7 +20,7 @@ class Base:
 
     def to_json_string(list_dictionaries):
         """method that returns the JSON string representation"""
-        if list_dictionaries is None or len(list_dictionaries) == 0:
+        if list_dictionaries is None or list_dictionaries == "[]":
             return ("[]")
         else:
             return (json.dumps(list_dictionaries))
@@ -61,10 +62,15 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """method that returns a list of instances"""
+
         filename = "{}.json".format(cls.__name__)
-        try:
-            with open(filename, 'r') as f:
-                dictLsit = Base.from_json_string(f.read())
-                return (cls.create(**dict) for dict in dictLsit)
-        except IOError:
-            return ([])
+        if os.path.exists(filename) is False:
+            return []
+        with open(filename, 'r') as f:
+            list_str = f.read()
+
+        list_cls = cls.from_json_string(list_str)
+        list_ins = []
+        for index in range(len(list_cls)):
+            list_ins.append(cls.create(**list_cls[index]))
+        return list_ins

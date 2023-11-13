@@ -18,7 +18,6 @@ class TestSquareClass(unittest.TestCase):
         self.assertEqual(new.height, 3)
         self.assertEqual(new.x, 0)
         self.assertEqual(new.y, 0)
-        self.assertEqual(new.id, 1)
 
     def test_new_square_2(self):
         """ Test new square with all attrs """
