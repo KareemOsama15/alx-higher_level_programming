@@ -9,4 +9,6 @@ if (!isNaN(size)) {
         }
         console.log(str);
     }
+} else {
+    console.log('Missing size');
 }
