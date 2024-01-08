@@ -10,6 +10,8 @@ if (process.argv.length <= 3) {
         if (current > first) {
             second = first;
             first = current;
+        } else if (current > second && current !== first) {
+            second = current;
         }
     }
     console.log(second);
