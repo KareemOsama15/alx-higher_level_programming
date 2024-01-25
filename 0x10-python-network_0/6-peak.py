@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-# module of function find_peak
+"""module of function find_peak"""
+
 
 def find_peak(list_of_integers):
-    # function that finds a peak of list of unsorted integers
+    """function that finds a peak of list of unsorted integers"""
     if not list_of_integers:
         return None
     low = 0
