@@ -7,9 +7,10 @@ of the response (decoded in utf-8).
 """
 
 
-url = sys.argv[1]
-try:
-    with request.urlopen(url) as response:
-        print(response.read().decode('utf-8'))
-except error.HTTPError as err:
-    print(f"Error code: {err.code}")
+if __name__ == "__main__":
+    url = sys.argv[1]
+    try:
+        with request.urlopen(url) as response:
+            print(response.read().decode('utf-8'))
+    except error.HTTPError as err:
+        print(f"Error code: {err.code}")
