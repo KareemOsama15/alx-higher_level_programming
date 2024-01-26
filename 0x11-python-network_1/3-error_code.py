@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-from urllib import request, error
-import sys
 """
 script sends a request to the URL and displays the body
 of the response (decoded in utf-8).
 """
+from urllib import request, error
+import sys
 
 
 if __name__ == "__main__":
