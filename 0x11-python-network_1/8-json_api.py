@@ -5,20 +5,23 @@ to an URL with the letter as a parameter
 """
 import requests
 import sys
-import json
 
 
 if __name__ == "__main__":
-    if (len(sys.argv) > 1):
-        data = {'q': sys.argv[1]}
-    else:
-        data = {'q': ""}
-    response = requests.post("http://0.0.0.0:5000/search_user", data=data)
+    data = {'q': ""}
+
     try:
-        resp = response.json()
-        if (resp):
-            print(f'[{resp.get("id")}] {resp.get("name")}')
+        data['q'] = sys.argv[1]
+    except requests.exceptions.RequestException:
+        pass
+
+    r = requests.post('http://0.0.0.0:5000/search_user', data)
+
+    try:
+        json_o = r.json()
+        if not json_o:
+            print("No result")
         else:
-            print('No result')
-    except json.JSONDecodeError:
-        print('Not a valid JSON')
+            print("[{}] {}".format(json_o.get('id'), json_o.get('name')))
+    except requests.exceptions.RequestException:
+        print("Not a valid JSON")
