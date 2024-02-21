@@ -19,3 +19,9 @@ request(url, (err, res, body) => {
     console.log(count);
   }
 });
+
+// another solution instead of 2 loops
+// const character_films = results.filter(film =>
+//     film.characters.includes('https://swapi-api.alx-tools.com/api/people/18/')
+// )
+// console.log(character_films.length)
